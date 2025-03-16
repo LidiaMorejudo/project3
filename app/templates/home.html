@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Store</title>
+</head>
+<body>
+    <h1>Welcome to the Resource Store</h1>
+    <h2>Blog Posts</h2>
+    <ul>
+        <!-- For now, we're just displaying a list of posts this loop will eventually display each post's title with a link to the post's detail page -->
+        {% for post in posts %}
+            <li>
+                <a href="{{ url_for('main.post', post_id=post['id']) }}">{{ post['title'] }}</a>
+            </li>
+        {% else %}
+            <li>No posts available yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
